@@ -28,6 +28,13 @@ fraud_prevention_using_ml/ │ ├── dataset/ # Dataset used for training �
 
 ---
 
+## 🔍 Models Used
+
+- `fraud_stack.pkl`: Stacked ensemble model for fraud detection.
+- `fraud_xg.pkl`: XGBoost classifier trained on transaction data.
+
+> These models are used in `predict.py` for real-time fraud prediction.
+
 ## 💻 How to Run
 
 1. **Clone the Repository**
