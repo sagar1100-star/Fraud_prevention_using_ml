@@ -1,69 +1,36 @@
 # 🛡️ Fraud Prevention Using Machine Learning
 
-This project is focused on detecting fraudulent transactions in e-commerce platforms using machine learning techniques. It uses a classification model to predict whether a transaction is **fraudulent** or **legitimate** based on transaction data.
+This project is a machine learning pipeline for detecting fraudulent transactions using multiple ML models including XGBoost and stacked ensembles.
 
----
+## 📂 Project Structure
 
-## 🚀 Features
+- `fraud_stack.pkl`: Stacked model trained for fraud detection.
+- `fraud_xg.pkl`: XGBoost model trained for high accuracy.
+- `dataset.csv`: Cleaned and preprocessed transactional data.
+- `predict.py`: Python script to make predictions using the trained models.
+- `notebooks/`: Contains exploratory data analysis and model training steps.
 
-- Detects fraudulent transactions using trained ML model
-- Simple, static UI for user interaction
-- Lightweight and easy to run
-- Educational and beginner-friendly project
-
----
-
-## 🧠 Built With
+## 🚀 Technologies Used
 
 - Python
 - Scikit-learn
+- XGBoost
 - Pandas, NumPy
-- Jupyter Notebook
-- HTML & CSS
+- Matplotlib, Seaborn
 
----
+## 🔍 How It Works
 
-## 📁 Project Structure
-fraud_prevention_using_ml/ │ ├── dataset/ # Dataset used for training ├── fraud_detection_model.ipynb # Jupyter Notebook containing ML code ├── index.html # Simple web UI ├── style.css # Styling for the HTML page └── README.md # Project overview
+1. Load the pre-trained model.
+2. Pass transactional data as input.
+3. Get binary classification output (fraud or not fraud).
 
----
+## 📈 Accuracy
 
-## 🔍 Models Used
+✅ Achieved over **97% accuracy** on validation data using the stacked model.
 
-- `fraud_stack.pkl`: Stacked ensemble model for fraud detection.
-- `fraud_xg.pkl`: XGBoost classifier trained on transaction data.
+## 📂 Example Usage
 
-> These models are used in `predict.py` for real-time fraud prediction.
-
-## 💻 How to Run
-
-1. **Clone the Repository**
-git clone https://github.com/sagar1100-star/fraud_prevention_using_ml.git cd fraud_prevention_using_ml
-
-2. **Install Required Libraries**
-> Make sure Python is installed. Then run:
-pip install -r requirements.txt
-> 
-3. **Run the Notebook**
-- Open `fraud_detection_model.ipynb` in Jupyter Notebook.
-- Run all the cells to train and evaluate the model.
-
-4. **View the Interface**
-- Open `index.html` in your browser.
-- Currently, it’s a static UI (not yet connected to the ML model).
-
----
-
-## 👤 Author
-
-- **Sagar R**  
-GitHub: [@sagar1100-star](https://github.com/sagar1100-star)
-
----
-
-## 📃 License
-
-This project is licensed under the [MIT License](LICENSE).
-
-
-
+```python
+import joblib
+model = joblib.load('fraud_stack.pkl')
+prediction = model.predict([input_features])
