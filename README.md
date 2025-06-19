@@ -1,36 +1,37 @@
 # 🛡️ Fraud Prevention Using Machine Learning
 
-This project is a machine learning pipeline for detecting fraudulent transactions using multiple ML models including XGBoost and stacked ensembles.
+This project uses machine learning models like XGBoost and a stacked ensemble to detect fraudulent financial transactions. It includes pre-trained models and prediction scripts for real-time use.
 
-## 📂 Project Structure
+## 📁 Project Contents
 
-- `fraud_stack.pkl`: Stacked model trained for fraud detection.
-- `fraud_xg.pkl`: XGBoost model trained for high accuracy.
-- `dataset.csv`: Cleaned and preprocessed transactional data.
-- `predict.py`: Python script to make predictions using the trained models.
-- `notebooks/`: Contains exploratory data analysis and model training steps.
+- `fraud_stack.pkl` – Stacked ensemble ML model.
+- `fraud_xg.pkl` – XGBoost classifier.
+- `predict.py` – Script to run predictions using trained models.
+- `dataset.csv` – Dataset used for training (if available).
+- Jupyter notebooks (optional): for training and evaluation.
 
-## 🚀 Technologies Used
+## 🔍 Features
 
-- Python
+- Preprocessing and feature engineering
+- Trained models using real-world fraud detection datasets
+- Stacking and boosting techniques used
+- Ready-to-use `.pkl` models
+- 97%+ model accuracy achieved in validation
+
+## 🧠 Technologies Used
+
+- Python 3
 - Scikit-learn
 - XGBoost
 - Pandas, NumPy
-- Matplotlib, Seaborn
+- Seaborn, Matplotlib
 
-## 🔍 How It Works
-
-1. Load the pre-trained model.
-2. Pass transactional data as input.
-3. Get binary classification output (fraud or not fraud).
-
-## 📈 Accuracy
-
-✅ Achieved over **97% accuracy** on validation data using the stacked model.
-
-## 📂 Example Usage
+## ⚙️ How to Use
 
 ```python
 import joblib
-model = joblib.load('fraud_stack.pkl')
-prediction = model.predict([input_features])
+
+model = joblib.load("fraud_stack.pkl")
+input_data = [[...]]  # Replace with real input
+result = model.predict(input_data)
+print("Prediction:", result)
